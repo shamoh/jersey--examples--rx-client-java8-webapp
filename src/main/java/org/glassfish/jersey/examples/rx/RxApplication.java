@@ -45,6 +45,7 @@ import javax.ws.rs.ext.ContextResolver;
 
 import org.glassfish.jersey.examples.rx.agent.AsyncAgentResource;
 import org.glassfish.jersey.examples.rx.agent.CompletionStageAgentResource;
+import org.glassfish.jersey.examples.rx.agent.HystrixObservableAgentResource;
 import org.glassfish.jersey.examples.rx.agent.ListenableFutureAgentResource;
 import org.glassfish.jersey.examples.rx.agent.ObservableAgentResource;
 import org.glassfish.jersey.examples.rx.agent.SyncAgentResource;
@@ -70,6 +71,7 @@ public class RxApplication extends ResourceConfig {
         register(ForecastResource.class);
         // Agent (Client) Resources.
         register(ObservableAgentResource.class);
+        register(HystrixObservableAgentResource.class);
         register(SyncAgentResource.class);
         register(AsyncAgentResource.class);
         register(ListenableFutureAgentResource.class);

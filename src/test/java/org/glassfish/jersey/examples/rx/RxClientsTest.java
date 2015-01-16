@@ -143,4 +143,25 @@ public class RxClientsTest extends JerseyTest {
         System.out.println(response.readEntity(String.class));
         System.out.println("Processing Time: " + agentResponse.getProcessingTime());
     }
+
+    @Test
+    public void testHystrixRxObservableClient() throws Exception {
+        // warmup
+        target("agent").path("hystrix").request().get();
+
+        final Response response = target("agent").path("hystrix").request().get();
+        response.bufferEntity();
+
+        final AgentResponse agentResponse = response.readEntity(AgentResponse.class);
+
+        assertThat(agentResponse.getVisited().size(), is(5));
+        assertThat(agentResponse.getRecommended().size(), is(5));
+
+        assertThat(agentResponse.getProcessingTime() > 850, is(true));
+        assertThat(agentResponse.getProcessingTime() < 950, is(true));
+
+        System.out.println(response.readEntity(String.class));
+        System.out.println("Processing Time: " + agentResponse.getProcessingTime());
+    }
+
 }

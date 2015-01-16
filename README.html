@@ -63,8 +63,9 @@
                     <p>
                         This example demonstrates how data from multiple resources and in various formats (json, xml) can be
                         combined into a form suitable to ones requirements. The example show and compares usage of standard
-                        JAX-RS sync client, JAX-RS async client, Jersey's Observable (RxJava) client extension, Jersey's
-                        CompletionStage (Java 8) client extension  and Jersey's ListenableFuture (Guava) client extension.
+                        JAX-RS sync client, JAX-RS async client, Jersey's Observable (RxJava) client extension,
+                        Jersey's Observable (RxJava) client extension using Netflix Hystrix latency and fault tolerant library,
+                        Jersey's CompletionStage (Java 8) client extension  and Jersey's ListenableFuture (Guava) client extension.
                     </p>
                     <p>
                         The application consists of two parts:
@@ -146,6 +147,12 @@
                             <tr>
                                 <td><code>/rx/agent/observable</code></td>
                                 <td>ObservableAgentResource</td>
+                                <td>GET</td>
+                                <td>returns JSON</td>
+                            </tr>
+                            <tr>
+                                <td><code>/rx/agent/hystrix</code></td>
+                                <td>HystrixObservableAgentResource</td>
                                 <td>GET</td>
                                 <td>returns JSON</td>
                             </tr>
@@ -252,6 +259,7 @@
                             <li><a href="http://localhost:8080/rx/agent/async">http://localhost:8080/rx/agent/async</a></li>
                             <li><a href="http://localhost:8080/rx/agent/listenable">http://localhost:8080/rx/agent/listenable</a></li>
                             <li><a href="http://localhost:8080/rx/agent/observable">http://localhost:8080/rx/agent/observable</a></li>
+                            <li><a href="http://localhost:8080/rx/agent/hystrix">http://localhost:8080/rx/agent/hystrix</a></li>
                             <li><a href="http://localhost:8080/rx/agent/completion">http://localhost:8080/rx/agent/completion</a></li>
                         </ul>
                     </p>
@@ -264,6 +272,14 @@
                             <li><a href="https://github.com/ReactiveX/RxJava">GitHub</a></li>
                             <li><a href="https://github.com/ReactiveX/RxJava/wiki">GitHub.Wiki</a></li>
                             <li><a href="http://reactivex.io/RxJava/javadoc/">JavaDoc</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Hystrix</strong> by Netflix
+                        <ul>
+                            <li><a href="https://github.com/Netflix/Hystrix">GitHub</a></li>
+                            <li><a href="https://github.com/Netflix/Hystrix/wiki">GitHub.Wiki</a></li>
+                            <li><a href="http://netflix.github.io/Hystrix/javadoc/">JavaDoc</a></li>
                         </ul>
                     </div>
                     <div>

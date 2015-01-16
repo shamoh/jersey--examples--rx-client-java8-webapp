@@ -55,6 +55,11 @@ public class AgentResponse {
     public AgentResponse() {
     }
 
+    public AgentResponse(List<Destination> visited, List<Recommendation> recommended) {
+        this.visited = visited;
+        this.recommended = recommended;
+    }
+
     public List<Destination> getVisited() {
         return visited;
     }
