@@ -3,6 +3,8 @@ This is example of **Jersey's Observable** (**RxJava**) client extension using *
 
 The example extends official <a href="https://github.com/jersey/jersey/">**Jersey**</a> <a href="https://github.com/jersey/jersey/tree/master/examples/rx-client-java8-webapp">examples/rx-client-java8-webapp</a> example.
 
+For details see my <a href="http://yatel.kramolis.cz/2015/01/reactive-jersey-client-rxjava-hystrix.html">Reactive Jersey Client using Java 8, RxJava and Netflix Hystrix</a> blog post.
+
 ## Running the Example
 
 Run the example as follows:
